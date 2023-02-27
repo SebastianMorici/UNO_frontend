@@ -50,14 +50,14 @@
 
 .deck_played .card {
    position: absolute;
-   top: 25%;
+   top: 40%;
    left: 48%;
    cursor: default;
 }
 .deck_draw .card {
    position: absolute;
-   top: 25%;
-   left: 30%;
+   top: 40%;
+   left: 28%;
 }
 
 .card {
@@ -246,7 +246,7 @@
    display: flex;
    position: absolute;
    top: 40%;
-   left: 28%;
+   right: 28%;
    width: 100px;
    height: 100px;
    border-radius: 50%;
@@ -271,4 +271,10 @@
    display: block;
    text-align: center;
    color: white;
+}
+.leave_button {
+   display: flex;
+   position: absolute;
+   top: 45%;
+   left: 8%;
 }

@@ -92,6 +92,8 @@ export const TablePage = () => {
          }
       } catch (e: any) {
          console.log(e.response.data.message);
+         await clearTable(tableId as number);
+         navigate('/')
       }
    };
 
@@ -136,10 +138,15 @@ export const TablePage = () => {
       await clearTable(tableId as number);
       navigate("/");
    }
+   const handleLeave = async () => {
+      await clearTable(tableId as number);
+      navigate("/");
+   }
 
    return (
       <div className="table">
-         <div className="deck deck_player3">
+         <button className='leave_button btn btn-danger' onClick={() => handleLeave()}> Leave </button>
+         <div className="deck deck_player3 animate__animated animate__slideInDown">
             {playerId === playerThree?.id &&
                playerThreeDeck.map((card) => (
                   <Card
@@ -152,7 +159,7 @@ export const TablePage = () => {
             {playerId !== playerThree?.id &&
                playerThreeDeck.map((card) => <Card key={card?.id} onClick={() => handleCardClick(playerId, card)} />)}
          </div>
-         <div className="deck deck_player2">
+         <div className="deck deck_player2 animate__animated animate__slideInRight">
             {playerId === playerTwo?.id &&
                playerTwoDeck.map((card) => (
                   <Card
@@ -165,7 +172,7 @@ export const TablePage = () => {
             {playerId !== playerTwo?.id &&
                playerTwoDeck.map((card) => <Card key={card?.id} onClick={() => handleCardClick(playerId, card)} />)}
          </div>
-         <div className="deck deck_player1">
+         <div className="deck deck_player1 animate__animated animate__slideInUp">
             {playerId === playerOne?.id &&
                playerOneDeck.map((card) => (
                   <Card
@@ -185,6 +192,7 @@ export const TablePage = () => {
             <Card onClick={() => handleDrawClick(playerId)} />
          </div>
          <div className={`color_circle ${currentColor.toLowerCase()}`}><b>{handleTurn()}</b></div>
+         
          {(winner !== null) && (
             <div className="winner animate__animated animate__flash"><h3><b>Winner: {handleWinner()}</b></h3></div>
          )}
@@ -197,7 +205,7 @@ export const TablePage = () => {
                      Accept
                   </button>
                </div>
-            )}
+         )}
       </div>
    );
 };
