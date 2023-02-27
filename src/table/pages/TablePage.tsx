@@ -42,7 +42,7 @@ export const TablePage = () => {
          ] = await initialize(tableId as number);
          setPlayerOne(player_one);
          setPlayerTwo(player_two);
-         setPlayerThree(player_three.name);
+         setPlayerThree(player_three);
          setPlayerOneDeck(player_one_deck);
          setPlayerTwoDeck(player_two_deck);
          setPlayerThreeDeck(player_three_deck);
@@ -62,6 +62,9 @@ export const TablePage = () => {
          try {
             if (await changed(tableId, [playerOneDeck.length, playerTwoDeck.length, playerThreeDeck.length]) !== "false") {
                const [
+                  player_one,
+                  player_two,
+                  player_three,
                   player_one_deck,
                   player_two_deck,
                   player_three_deck,
@@ -70,6 +73,9 @@ export const TablePage = () => {
                   current_color,
                   winner
                ] = await refresh(tableId as number);
+               setPlayerOne(player_one);
+               setPlayerTwo(player_two);
+               setPlayerThree(player_three)
                setPlayerOneDeck(player_one_deck);
                setPlayerTwoDeck(player_two_deck);
                setPlayerThreeDeck(player_three_deck);
@@ -121,18 +127,27 @@ export const TablePage = () => {
    return (
       <div className="table">
          <div className="deck deck_player3">
-            {playerThreeDeck.map((card) => (
+            {(playerId === playerThree?.id) && playerThreeDeck.map((card) => (
                <Card key={card?.id} color={card?.color?.toLowerCase()} value={card?.value?.toLowerCase()} onClick={() => handleCardClick(playerId, card)} />
+            ))}
+            {(playerId !== playerThree?.id) && playerThreeDeck.map((card) => (
+               <Card key={card?.id} onClick={() => handleCardClick(playerId, card)} />
             ))}
          </div>
          <div className="deck deck_player2">
-            {playerTwoDeck.map((card) => (
+            {(playerId === playerTwo?.id) && playerTwoDeck.map((card) => (
                <Card key={card?.id} color={card?.color?.toLowerCase()} value={card?.value?.toLowerCase()} onClick={() => handleCardClick(playerId, card)} />
+            ))}
+            {(playerId !== playerTwo?.id) && playerTwoDeck.map((card) => (
+               <Card key={card?.id} onClick={() => handleCardClick(playerId, card)} />
             ))}
          </div>
          <div className="deck deck_player1">
-            {playerOneDeck.map((card) => (
+            {(playerId === playerOne?.id) && playerOneDeck.map((card) => (
                <Card key={card?.id} color={card?.color?.toLowerCase()} value={card?.value?.toLowerCase()} onClick={() => handleCardClick(playerId, card)} />
+            ))}
+            {(playerId !== playerOne?.id) && playerOneDeck.map((card) => (
+               <Card key={card?.id} onClick={() => handleCardClick(playerId, card)} />
             ))}
          </div>
          <div className="deck deck_played">

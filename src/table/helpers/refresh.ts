@@ -21,5 +21,5 @@ export const refresh = async (tableId: number): Promise<any> => {
    const current_color = unoTableResponse.data.currentColor;
    const winner = unoTableResponse.data.winner;
 
-   return [player_one_deck, player_two_deck, player_three_deck, played_card, next_turn, current_color, winner];
+   return [player_one, player_two, player_three, player_one_deck, player_two_deck, player_three_deck, played_card, next_turn, current_color, winner];
 };
