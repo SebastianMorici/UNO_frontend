@@ -1,0 +1,264 @@
+.table {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   /* height: 100vh; */
+}
+
+.deck {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+
+   /* margin: 10px; */
+}
+
+.deck_player1 {
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+}
+
+.deck_player2 {
+   align-items: flex-end;
+   display: flex;
+   flex-direction: column;
+   /* margin-left: 80%; */
+   width: 200px;
+   margin-left: 1000px;
+   min-height: 300px;
+   /* justify-content: flex-end; */
+   /* align-items: center; */
+}
+
+.deck_player2 .card {
+   transform: scale(0.5) rotate(-90deg);
+   margin: -40px;
+}
+
+.deck_player1 {
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+}
+
+.deck_player3 .card {
+   transform: scale(0.5) rotate(180deg);
+}
+
+.deck_played .card {
+   position: absolute;
+   top: 25%;
+   left: 48%;
+   cursor: default;
+}
+.deck_draw .card {
+   position: absolute;
+   top: 25%;
+   left: 30%;
+}
+
+.card {
+   width: 100px;
+   height: 140px;
+   background-color: white;
+   border-radius: 8px;
+   border: 2px solid black;
+   transform: scale(0.5);
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   padding: 0px;
+   margin: -20px;
+   cursor: pointer;
+}
+
+/* CARDS IMAGES CLASSES */
+.card--red-zero {
+   background-image: url("/public/cards/0R.png");
+}
+.card--red-one {
+   background-image: url("/public/cards/1R.png");
+}
+.card--red-two {
+   background-image: url("/public/cards/2R.png");
+}
+.card--red-three {
+   background-image: url("/public/cards/3R.png");
+}
+.card--red-four {
+   background-image: url("/public/cards/4R.png");
+}
+.card--red-five {
+   background-image: url("/public/cards/5R.png");
+}
+.card--red-six {
+   background-image: url("/public/cards/6R.png");
+}
+.card--red-seven {
+   background-image: url("/public/cards/7R.png");
+}
+.card--red-eight {
+   background-image: url("/public/cards/8R.png");
+}
+.card--red-nine {
+   background-image: url("/public/cards/9R.png");
+}
+.card--red-skip {
+   background-image: url("/public/cards/skipR.png");
+}
+.card--red-reverse {
+   background-image: url("/public/cards/_R.png");
+}
+.card--red-draw_two {
+   background-image: url("/public/cards/D2R.png");
+}
+.card--blue-zero {
+   background-image: url("/public/cards/0B.png");
+}
+.card--blue-one {
+   background-image: url("/public/cards/1B.png");
+}
+.card--blue-two {
+   background-image: url("/public/cards/2B.png");
+}
+.card--blue-three {
+   background-image: url("/public/cards/3B.png");
+}
+.card--blue-four {
+   background-image: url("/public/cards/4B.png");
+}
+.card--blue-five {
+   background-image: url("/public/cards/5B.png");
+}
+.card--blue-six {
+   background-image: url("/public/cards/6B.png");
+}
+.card--blue-seven {
+   background-image: url("/public/cards/7B.png");
+}
+.card--blue-eight {
+   background-image: url("/public/cards/8B.png");
+}
+.card--blue-nine {
+   background-image: url("/public/cards/9B.png");
+}
+.card--blue-skip {
+   background-image: url("/public/cards/skipB.png");
+}
+.card--blue-reverse {
+   background-image: url("/public/cards/_B.png");
+}
+.card--blue-draw_two {
+   background-image: url("/public/cards/D2B.png");
+}
+.card--green-zero {
+   background-image: url("/public/cards/0G.png");
+}
+.card--green-one {
+   background-image: url("/public/cards/1G.png");
+}
+.card--green-two {
+   background-image: url("/public/cards/2G.png");
+}
+.card--green-three {
+   background-image: url("/public/cards/3G.png");
+}
+.card--green-four {
+   background-image: url("/public/cards/4G.png");
+}
+.card--green-five {
+   background-image: url("/public/cards/5G.png");
+}
+.card--green-six {
+   background-image: url("/public/cards/6G.png");
+}
+.card--green-seven {
+   background-image: url("/public/cards/7G.png");
+}
+.card--green-eight {
+   background-image: url("/public/cards/8G.png");
+}
+.card--green-nine {
+   background-image: url("/public/cards/9G.png");
+}
+.card--green-skip {
+   background-image: url("/public/cards/skipG.png");
+}
+.card--green-reverse {
+   background-image: url("/public/cards/_G.png");
+}
+.card--green-draw_two {
+   background-image: url("/public/cards/D2G.png");
+}
+.card--yellow-zero {
+   background-image: url("/public/cards/0Y.png");
+}
+.card--yellow-one {
+   background-image: url("/public/cards/1Y.png");
+}
+.card--yellow-two {
+   background-image: url("/public/cards/2Y.png");
+}
+.card--yellow-three {
+   background-image: url("/public/cards/3Y.png");
+}
+.card--yellow-four {
+   background-image: url("/public/cards/4Y.png");
+}
+.card--yellow-five {
+   background-image: url("/public/cards/5Y.png");
+}
+.card--yellow-six {
+   background-image: url("/public/cards/6Y.png");
+}
+.card--yellow-seven {
+   background-image: url("/public/cards/7Y.png");
+}
+.card--yellow-eight {
+   background-image: url("/public/cards/8Y.png");
+}
+.card--yellow-nine {
+   background-image: url("/public/cards/9Y.png");
+}
+.card--yellow-skip {
+   background-image: url("/public/cards/skipY.png");
+}
+.card--yellow-reverse {
+   background-image: url("/public/cards/_Y.png");
+}
+.card--yellow-draw_two {
+   background-image: url("/public/cards/D2Y.png");
+}
+.card--black-wild {
+   background-image: url("/public/cards/W.png");
+}
+.card--black-wild_draw_four {
+   background-image: url("/public/cards/D4W.png");
+}
+.card--back-unknown {
+   background-image: url("/public/cards/card-back.png");
+}
+
+.color_circle {
+   position: absolute;
+   top: 40%;
+   left: 28%;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+}
+.red {
+   background-color: #ea323c;
+}
+.green {
+   background-color: #33984b;
+}
+.blue {
+   background-color: #0098dc;
+}
+.yellow {
+   background-color: #ffc825;
+}

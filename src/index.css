@@ -1,13 +1,132 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   background-color: #262930;
+   color: #ffffff;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.board {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   padding: 10px;
+}
+
+.board-row:after {
+   clear: both;
+   content: "";
+   display: table;
+}
+
+.cell {
+   background: #393d46;
+   border: 1px solid #999;
+   color: #0a7897;
+   float: left;
+   font-size: 104px;
+   font-weight: bold;
+   line-height: 100px;
+   height: 100px;
+   margin-right: -1px;
+   margin-top: -1px;
+   padding: 0;
+   text-align: center;
+   vertical-align: middle;
+   width: 100px;
+}
+
+.login_form,
+.register_form {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   padding: 10px;
+}
+
+.search_container {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   padding: 10px;
+}
+
+.search_button {
+   box-shadow: 0px 0px 0px 2px #0a7897;
+   background: #0a7897;
+   background-color: #0a7897;
+   border-radius: 21px;
+   display: inline-block;
+   cursor: pointer;
+   color: #ffffff;
+   font-family: Arial;
+   font-size: 28px;
+   font-weight: bold;
+   padding: 23px 76px;
+   text-decoration: none;
+   text-shadow: 0px 0px 0px #0a7897;
+}
+.search_button:hover {
+   background: linear-gradient(to bottom, #0a7897 5%, #033947 100%);
+   background-color: #0a7897;
+}
+.search_button:active {
+   position: relative;
+   top: 1px;
+}
+
+
+.player_x {
+   margin-top: 400px;
+   margin-left: 40px;
+   /* text-align: left;
+   display: grid;
+   margin-left: 30%;
+   margin-top: 20%; */
+}
+
+.player_o {
+   margin-top: -40px;
+   margin-left: 550px;
+   /* text-align: right;
+   display: grid;
+   margin-right: 30%;
+   margin-top: -40px; */
+}
+
+.turn {
+   margin-left: 0%;
+   margin-top: 30%;
+   display: block;
+   text-align: center;
+}
+
+.winner {
+   margin-left: 0%;
+   margin-top: 5%;
+   display: block;
+   text-align: center;
+}
+
+.accept_button {
+   /* margin-left: 45%;
+   margin-top: 5%;
+   display: block; */
+   text-align: center;
+   box-shadow: 0px 0px 0px 2px #0a7897;
+   background: #0a7897;
+   background-color: #0a7897;
+   border-radius: 21px;
+   font-family: Arial;
+   font-size: 20px;
+   font-weight: bold;
 }
